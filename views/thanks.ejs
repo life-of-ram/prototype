@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Centered Div</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Source+Sans+3&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffffff 0%, #e1e8ed 100%);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      /* Added to make header appear at the top */
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      /* Added to make the container take full height */
+    }
+
+    header {
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+    }
+
+    .logo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sonata-logo {
+      width: 35%;
+      height: auto;
+      margin: 5% auto;
+    }
+
+    .parity-logo {
+      width: 50%;
+      height: auto;
+      margin: 5% auto;
+    }
+
+    .center-text {
+      flex: 2;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 600;
+      color: transparent;
+    }
+
+    #centered-div {
+      width: 40%;
+      box-shadow: 4px 8px 40px 8px rgba(88, 146, 255, 0.2);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    .typewriter {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      font-family: 'Kaushan Script', cursive;
+      font-size: 4em;
+      color: red;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 0.15em solid transparent;
+      animation: typewriter 2.5s steps(14) forwards, blink-caret 0.5s step-end infinite;
+    }
+
+    .fade-in {
+      margin: 0;
+      color: #aaa;
+      font-size: 1.6rem;
+      font-family: 'Source Sans 3', sans-serif;
+      opacity: 0;
+      animation: fade-in 2s ease-in-out forwards;
+    }
+
+    @keyframes typewriter {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+
+      0%,
+      100% {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: rgba(255, 0, 0, 0.5);
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 1400px) {
+
+    }
+
+    @media screen and (max-width: 1020px) {
+      body {
+        text-align: justify;
+      }
+
+      .title {
+        font-size: 40px;
+
+      }
+
+      .text {
+        font-size: 15px;
+      }
+
+      .logo {
+        flex: 0.5;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .center-text {
+        flex: 1;
+      }
+
+      .sonata-logo {
+        width: 100px;
+        height: auto;
+        margin: 5% 80px;
+        margin-left: 0px;
+      }
+
+      .parity-logo {
+        width: 150px;
+        height: auto;
+        margin: 5% 50px;
+        margin-left: 0px;
+      }
+
+      #centered-div {
+        width: 50%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .typewriter {
+        font-size: 3rem;
+      }
+
+      .fade-in {
+        font-size: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img class="sonata-logo" src="sonata-logo.png" alt="Left Logo">
+    </div>
+    <div class="center-text">
+      INCLUSION SURVEY
+    </div>
+    <div class="logo">
+      <img class="parity-logo" src="parity-logo.png" alt="Right Logo">
+    </div>
+  </header>
+  <div class="container">
+    <div id="centered-div">
+      <p class="typewriter">Thank you!<span class="blink-caret"></span></p>
+      <br>
+      <p class="fade-in">
+        <%- note %>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const typewriterText = document.querySelector(".typewriter");
+
+      setTimeout(function () {
+        typewriterText.style.animation = "none"; // Stop typewriter animation
+      }, 2000); // Stop after 2 seconds
+    });
+
+    function sw(){
+      var s = window.screen.width;
+      alert(s);
+    }
+
+    // sw();
+  </script>
+</body>
+
+</html>

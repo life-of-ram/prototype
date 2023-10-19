@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sonata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url("index_bg.png");
+            font-family: "Poppins";
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .sonata-logo {
+            width: 35%;
+            height: auto;
+            margin: 5% auto;
+        }
+
+        .parity-logo {
+            width: 50%;
+            height: auto;
+            margin: 5% auto;
+        }
+
+        .center-text {
+            flex: 2;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 600;
+            color: transparent;
+        }
+
+        .container {
+            display: flex;
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 70%;
+            padding: 20px;
+            border-radius: 20px;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+
+        .title {
+            font-size: 50px;
+            margin: 2%;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 20px;
+            margin: 2%;
+        }
+
+        .btnContainer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -50px;
+        }
+
+        button {
+            color: #000000;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 30px;
+            font-weight: 600;
+            border-radius: 20px;
+            width: 200px;
+            height: 70px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        button:hover {
+            background-color: orange;
+            color: white
+        }
+
+        @media screen and (max-width: 1020px) {
+            body {
+                text-align: justify;
+            }
+
+            .title {
+                font-size: 40px;
+
+            }
+
+            .text {
+                font-size: 15px;
+            }
+
+            .logo {
+                flex: 0.5;
+            }
+
+            .center-text {
+                flex: 1;
+            }
+
+            .sonata-logo {
+                width: 60%;
+                height: auto;
+                margin: 5% auto;
+            }
+
+            .parity-logo {
+                width: 80%;
+                height: auto;
+                margin: 5% auto;
+            }
+
+            .btnContainer {
+                justify-content: center;
+                padding: 20px;
+                margin-top: 0px;
+            }
+
+            button {
+                font-size: 20px;
+                width: 120px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="sonata-logo" src="sonata-logo.png" alt="Left Logo">
+        </div>
+        <div class="center-text">
+            INCLUSION SURVEY
+        </div>
+        <div class="logo">
+            <img class="parity-logo" src="parity-logo.png" alt="Right Logo">
+        </div>
+    </header>
+    <div class="container">
+        <div class="title">Welcome to the Inclusion Survey</div>
+        <div class="text">Your feedback is at the core of our progress. By taking part in the Sonata Employee Inclusion
+            Survey, you
+            are assisting us in comprehending your needs, concerns, and aspirations, where your responses will play a
+            pivotal role in shaping the D&I initiatives we pursue moving forward.
+            <br><br>
+            Together, we will persist in constructing a workplace that cultivates diversity, equity, and inclusion for
+            all.
+            <br><br>
+            Team <br>
+            Sonata Global D&I Council
+            <div class="btnContainer">
+                <button onclick="redirect()">Next</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function redirect() {
+            window.location.href = "<%= redirect %>"
+        }
+    </script>
+</body>
+
+</html>

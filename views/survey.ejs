@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Web Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Poppins";
+            background: url("index_bg.png");
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        #section1 .container:not(:first-child) .label-container label {
+            visibility: hidden !important;
+        }
+
+        #section2 .container:not(:first-child) .label-container label {
+            visibility: hidden !important;
+        }
+
+        #section3 .container:not(:first-child) .label-container label {
+            visibility: hidden !important;
+        }
+
+        #section4 .container:not(:first-child) .label-container label {
+            visibility: hidden !important;
+        }
+
+        #section5 .container:not(:first-child) .label-container label {
+            visibility: hidden !important;
+        }
+
+        hr.section-divider {
+            width: 90%;
+            color: #78326e;
+            background: #78326e;
+            height: 2px;
+            border: none;
+        }
+
+        #main {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #78326e;
+            border-radius: 40px;
+            width: 80%;
+            margin: auto;
+            backdrop-filter: blur(10px);
+            margin-bottom: 8%;
+            /* background-image: linear-gradient(270deg, rgba(255, 255, 255, 0.8), rgba(255, 200, 253, 0.4)); */
+            border: 2px solid orange;
+        }
+
+        #sections {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sections>div {
+            padding: 5px;
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .container {
+            padding: 5px;
+            margin: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .question {
+            width: 50%;
+            display: inline-block;
+        }
+
+        .options {
+            width: 50%;
+            text-align: center;
+            display: inline-block;
+            justify-content: center;
+        }
+
+        label::before {
+            accent-color: #78326e;
+            /* Change the color when the radio is checked */
+        }
+
+        select {
+            width: 50%;
+        }
+
+        textarea {
+            width: 75%;
+            height: 50px;
+            margin: 2%;
+            border: none;
+            outline: none;
+            min-width: 50%;
+            max-width: 75%;
+            min-height: 50px;
+            margin-left: 0px;
+            border-radius: 10px;
+        }
+
+        textarea::placeholder {
+            padding: 5px;
+            font-family: 'Poppins';
+        }
+
+        #nextButton {
+            margin-right: 5px;
+        }
+
+        #prevButton {
+            margin-left: 5px;
+        }
+
+        .label-container {
+            display: flex;
+            flex-direction: column;
+            transform: translateY(-25%);
+        }
+
+        .label-container label {
+            padding: 8px;
+            padding-bottom: 20px;
+            text-wrap: nowrap;
+        }
+
+        input[type="radio"] {
+            margin: auto;
+            width: 20px;
+            height: 15px;
+            accent-color: black;
+        }
+
+
+
+        @media only screen and (max-width: 1200px) {
+            .container {
+                display: inline-flex;
+                flex-direction: column;
+            }
+
+            .question {
+                width: 100%;
+                text-align: center;
+            }
+
+
+            textarea {
+                width: 96%;
+                text-align: center;
+                margin: 2% auto;
+            }
+
+            input[value="Strongly Agree"],
+            input[value="Strongly Disagree"] {
+                width: 25px;
+                height: 25px;
+            }
+
+            input[value="Agree"],
+            input[value="Disagree"] {
+                width: 18px;
+                height: 18px;
+                align-items: center;
+                justify-content: center;
+                vertical-align: middle;
+            }
+
+            input[value="Neutral"] {
+                width: 15px;
+                height: 15px;
+            }
+
+            .label-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                transform: none;
+                margin: 2% 0px 5%;
+
+            }
+
+            .label-container .strongly-agree {
+                order: -1;
+                padding: 10px;
+                margin-right: 20px;
+            }
+
+            label {
+                align-self: center;
+            }
+
+            .label-container .strongly-disagree {
+                order: 2;
+                padding: 10px;
+                margin-left: 20px;
+            }
+
+            .agree,
+            .neutral,
+            .disagree {
+                display: none;
+            }
+
+            #section1 .container:not(:first-child) .label-container label {
+                visibility: visible !important;
+            }
+
+            #section2 .container:not(:first-child) .label-container label {
+                visibility: visible !important;
+            }
+
+            #section3 .container:not(:first-child) .label-container label {
+                visibility: visible !important;
+            }
+
+            #section4 .container:not(:first-child) .label-container label {
+                visibility: visible !important;
+            }
+
+            #section5 .container:not(:first-child) .label-container label {
+                visibility: visible !important;
+            }
+
+            .logo {
+                flex: 0.5;
+            }
+
+            .center-text {
+                flex: 1;
+            }
+
+            .sonata-logo {
+                width: 60%;
+                height: auto;
+                margin: 5% auto;
+            }
+
+            .parity-logo {
+                width: 80%;
+                height: auto;
+                margin: 5% auto;
+            }
+
+            .options {
+                padding: 10px;
+                padding-bottom: 0px;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+                text-align: center;
+            }
+
+            select {
+                margin: 2% auto;
+                width: 50%;
+                height: 25px;
+            }
+
+            select:hover {
+                accent-color: #78326e;
+            }
+        }
+    </style>
+    <style>
+        header {
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .sonata-logo {
+            width: 35%;
+            height: auto;
+            margin: 5% auto;
+        }
+
+        .parity-logo {
+            width: 50%;
+            height: auto;
+            margin: 5% auto;
+        }
+
+        .center-text {
+            flex: 2;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+        .button {
+            color: #000000;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 25px;
+            font-weight: 600;
+            border-radius: 20px;
+            width: 120px;
+            height: 60px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin: 10px auto;
+            display: block;
+        }
+
+        .button:hover {
+            background-color: orange;
+            color: white
+        }
+
+        /* .options input[type="radio"] {
+            margin-left: 10px;
+            /* Adjust the margin as needed /
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="sonata-logo" src="sonata-logo.png" alt="Left Logo">
+        </div>
+        <div class="center-text">
+            INCLUSION SURVEY
+        </div>
+        <div class="logo">
+            <img class="parity-logo" src="parity-logo.png" alt="Right Logo">
+        </div>
+    </header>
+    <div id="main">
+    </div>
+    <script>
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        const sectionQuestions = [
+            [
+                "I am comfortable to be my authentic self in my organization",
+                "I am comfortable to talk about my background and experiences with my colleagues without feeling excluded",
+                "If I raise a concern about harassment, discriminatory treatment, or anything else that is wrong at work, I am confident my organization would do what is right",
+                "We have healthy disagreements and debates among the team I am working in",
+                "I am comfortable asking other team members for help",
+                "Discriminatory jokes/comments made among employees are not tolerated in my working environment",
+                "During team meetings, all members are encouraged to speak up and share thoughts and ideas",
+            ],
+            [
+                "My organization values diverse people, opinions and ideas",
+                "Employees of different age, gender and cultures are valued and treated equitably in the company",
+                "My organization ensures an inclusive environment via language used",
+                "My organization ensures an inclusive culture that allows diverse employees to bring their authentic self to work",
+                "My organization ensures a respectful work culture by giving all voices a respectful hearing in meetings/all hands meet/other forums",
+                "My organization encourages or supports employees' work life balance",
+                "My organisation regularly communicates information about its diversity goals",
+                "Employees from different backgrounds and experiences interact well in the company",
+            ],
+            [
+                "My organization has inclusive systems, processes, policies and programs",
+                "I believe HR policies in my organization are not discriminatory",
+                "In my organization, the hiring process is based on clearly defined criteria that eliminates age, gender and cultural biases",
+                "My organization puts necessary efforts to retain employees from different backgrounds",
+                "Organizational objectives, changes and progress are discussed and clearly communicated to all employees",
+                "I am also provided opportunities to ask questions and share my views about organizational goals and decisions",
+                "My organization provides good educational programs to promote diversity, equity, and inclusion in our workplace",
+            ],
+            [
+                "Employees of different age, gender and cultural background are treated fairly in an internal promotion process",
+                "A career development path exists and is shared with all employees",
+                "I have the opportunity like everyone else to work in any area / function including 'core' business areas in the organization",
+                "I have the opportunity like everyone else among my peers to network professionally in internal and external forums",
+                "I have the opportunity like everyone else to work on key projects and get development opportunities in the organization",
+                "I have access like everyone else to formal and informal mentoring in the organization",
+                "The promotion process is based on clearly defined criteria",
+            ],
+            [
+                "Managers and leaders are inclusive of diverse people in the team and in the organization",
+                "Leaders in my organization treat everyone with fairness and respect regardless of age, gender, race and ethnicity",
+                "I have role models among the leaders in my organization who inspire me",
+                "My manager is interested in and aware of my long term career aspirations",
+                "My manager is fair and transparent in allocation of critical assignments, key projects and development opportunities",
+                "My manager helps me balance my personal commitments while fulfilling my professional commitments",
+                "My manager handles matters of discrimination and bias satisfactorily",
+            ],
+        ];
+        // Define the number of containers for each section
+        var sectionContainers = [
+            sectionQuestions[0].length,
+            sectionQuestions[1].length,
+            sectionQuestions[2].length,
+            sectionQuestions[3].length,
+            sectionQuestions[4].length,
+        ];
+
+        // Create a new form element
+        var formElement = document.createElement("form");
+        formElement.method = "post";
+        formElement.action = "<%= postRoute %>";
+
+        // Create a new div element for "sections"
+        var sectionsDiv = document.createElement("div");
+        sectionsDiv.id = "sections";
+
+        // Append the "sections" div to the "form" element
+        formElement.appendChild(sectionsDiv);
+
+        // Append the "form" element to the "main" div
+        document.getElementById("main").appendChild(formElement);
+
+        // Create and populate "section1" to "section5" divs with white containers
+        for (var i = 0; i < sectionContainers.length; i++) {
+            var section = document.createElement("div");
+            section.id = "section" + (i + 1);
+
+            // Create the specified number of white container divs within each section
+            for (var j = 0; j < sectionContainers[i]; j++) {
+                var containerDiv = document.createElement("div");
+                containerDiv.classList.add("container");
+
+                // Create the "question" and "options" divs within each container
+                var questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.id = "section" + (i + 1) + "question" + (j + 1); // Unique question ID
+
+                // Set the text content of the "question" div based on the sectionQuestions array
+                if (sectionQuestions[i]) {
+                    // Check if the question exists in the array before assigning it
+                    if (sectionQuestions[i][j]) {
+                        questionDiv.textContent = sectionQuestions[i][j];
+                    }
+                }
+
+                var optionsDiv = document.createElement("div");
+                optionsDiv.classList.add("options");
+                // optionsDiv.textContent = "Options";
+
+
+                for (var k = 0; k < 5; k++) {
+                    var labels = ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"];
+
+                    var labelContainer = document.createElement("div");
+                    labelContainer.classList.add("label-container");
+
+                    var label = document.createElement("label");
+                    var labelText = document.createTextNode(labels[k]);
+                    label.appendChild(labelText);
+                    label.classList.add(labels[k].replace(/\s+/g, '-').toLowerCase());
+                    label.setAttribute("for", "section" + (i + 1) + "question" + (j + 1) + "option");
+
+                    var radioInput = document.createElement("input");
+                    radioInput.type = "radio";
+                    radioInput.name = "section" + (i + 1) + "question" + (j + 1) + "option";
+                    radioInput.value = labels[k];
+
+                    labelContainer.appendChild(label);
+                    labelContainer.appendChild(radioInput);
+
+                    const labelz = document.querySelectorAll('label');
+
+                    labelz.forEach(abel => {
+                        // if (!abel.getAttribute('for').includes('section1question1')) {
+                        abel.style.visibility = 'visible';
+
+
+                    });
+
+                    optionsDiv.appendChild(labelContainer);
+
+
+
+                    // if (j === 0 && window.innerWidth > 1020) {
+                    //     optionsDiv.appendChild(labelContainer);
+                    // }
+                    // else {
+                    //     optionsDiv.appendChild(labelContainer);
+                    //     label.style.visibility = "hidden";
+                    // }
+
+                    // if (window.innerWidth <= 1020) {
+                    //     optionsDiv.appendChild(labelContainer);
+                    //     labelContainer.style.display = "flex";
+                    //     label.style.visibility = "visible";
+                    // }
+
+                    // containerDiv.appendChild(questionDiv);
+                    // containerDiv.appendChild(optionsDiv);
+                    // section.appendChild(containerDiv);
+
+                }
+
+                // if (window.innerWidth > 1020) {
+                //     if (j === 0) {
+                //         labelContainer.style.display = "flex";
+                //     } else {
+                //         label.style.color = "transparent";
+                //     }
+                // } else if (window.innerWidth <= 1020) {
+                //     // Loop through each label container and set display to "flex"
+                //     const labelContainers = document.querySelectorAll('.label-container');
+                //     labelContainers.forEach(container => {
+                //         container.style.display = "flex";
+                //     });
+
+                //     // Loop through labels and make the text visible
+                //     const labels = document.querySelectorAll('.label-container label');
+                //     labels.forEach(label => {
+                //     });
+                // }
+
+
+
+
+                // Append the "question" and "options" divs to the container div
+                containerDiv.appendChild(questionDiv);
+                containerDiv.appendChild(optionsDiv);
+                section.appendChild(containerDiv);
+            }
+
+            sectionsDiv.appendChild(section);
+
+            // Create and append the horizontal line (hr) with the "section-divider" class
+            var hrElement = document.createElement("hr");
+            hrElement.className = "section-divider";
+            section.appendChild(hrElement);
+        }
+
+
+
+
+        const optionalQuestions = [
+            "Based on your experience, what are the enablers and barriers faced by women in the organization?",
+            "Based on your experience, what are the enablers and barriers faced by men in the organization?",
+            "Based on your experience, what are the enablers and barriers faced by employees of different ages in the organization?",
+            "Based on your experience, what are the enablers and barriers faced by employees of different cadres/grades in the organization?",
+            "In your opinion, what is the most important action that managers could take to improve diversity and inclusion in the organization?",
+        ];
+
+        // Create an "Optional Section" at the bottom of "Section 5"
+        var optionalSection = document.createElement("div");
+        optionalSection.id = "section6";
+
+        // optionalQuestionDiv.textContent = "Optional Section Question";
+        for (var i = 0; i < optionalQuestions.length; i++) {
+            var optionalQuestionDiv = document.createElement("div");
+            optionalQuestionDiv.classList.add("question");
+            optionalQuestionDiv.textContent = optionalQuestions[i];
+            var optionalAnswerTextarea = document.createElement("textarea");
+            optionalAnswerTextarea.name = "section6question" + (i + 1) + "option";
+            optionalAnswerTextarea.placeholder = "Your answer here";
+
+            optionalSection.appendChild(optionalQuestionDiv);
+            optionalSection.appendChild(optionalAnswerTextarea);
+
+            sectionsDiv.appendChild(optionalSection);
+        }
+
+        const infoQuestions = [
+            "What is Your Gender?",
+            "Please tell us how long you have you been employed under Sonata.",
+            "Please indicate your age",
+            "Which of the following office location are you from?",
+            "Which of the following business functions/units are you from?",
+            "Which management level are you from?",
+        ];
+
+        // Create Section 7 for dropdown questions
+        var section7 = document.createElement("div");
+        section7.id = "section7";
+
+        for (var i = 0; i < infoQuestions.length; i++) {
+            var questionDiv = document.createElement("div");
+            questionDiv.classList.add("question");
+            questionDiv.textContent = infoQuestions[i];
+
+            var selectDropdown = document.createElement("select");
+            selectDropdown.name = "section7question" + (i + 1) + "option";
+            selectDropdown.required = true; // Make the dropdown required
+
+            // Add a default option that is disabled and selected
+            var defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "Please select";
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            selectDropdown.appendChild(defaultOption);
+
+            // Add options to the dropdown based on the question
+            if (i === 0) {
+                var options = ["Male", "Female", "Others", "Prefer not to answer"];
+            } else if (i === 1) {
+                var options = ["Less than 1 year", "Between 1-5 years", "Between 6-10 years", "Between 11-15 years", "Between 16-20 years", "Over 21 years", "Prefer not to answer",];
+            } else if (i == 2) {
+                var options = ["20 - 25 years", "26 - 30 years", "31 - 40 years", "41 - 50 years", "51 - 60 years", "61 years or older", "Prefer not to answer"];
+            } else if (i == 3) {
+                var options = ["Australia", "Canada", "Denmark", "Germany", "India", "Ireland", "Japan", "Malaysia", "Mexico", "Singapore", "UK", "US", "Others", "Prefer not to answer"];
+            } else if (i == 4) {
+                var options = ["Delivery", "Finance", "HR", "Marketing", "Competency", "CEO office", "GPO Org (Global Partner Office)", "SITL", "Microsoft account", "APAC", "ANZ", "EU", "US TMT & Emerging", "US Retail & Manufacturing", "UK & Ireland", "US HLS", "US BFSI", "Encore", "GBW", "Quant", "Others", "Prefer not to answer"];
+            } else if (i == 5) {
+                var options = ["Junior Management", "Middle Management", "Senior Management", "Executive Leadership", "Prefer not to answer"];
+            }
+
+            // Add the question-specific options to the dropdown
+            for (var j = 0; j < options.length; j++) {
+                var option = document.createElement("option");
+                option.value = options[j];
+                option.textContent = options[j];
+                selectDropdown.appendChild(option);
+            }
+
+            // Append question and dropdown to the section
+            section7.appendChild(questionDiv);
+            section7.appendChild(selectDropdown);
+        }
+
+        // Add Section 7 to the form or another container
+        var form = document.querySelector("form"); // Adjust this selector as needed
+        section7.style.display = "none";
+        form.appendChild(section7);
+
+
+        // Append Section 7 to the existing sections
+        sectionsDiv.appendChild(section7);
+    </script>
+    <script>
+        var nextButton = document.createElement("button");
+        nextButton.textContent = "Next";
+        nextButton.classList = "button";
+        nextButton.type = "button";
+        nextButton.id = "nextButton";
+
+        var prevButton = document.createElement("button");
+        prevButton.textContent = "Prev";
+        prevButton.classList = "button";
+        prevButton.type = "button";
+        prevButton.id = "prevButton";
+        prevButton.style.display = "none";
+
+        // Create a "Submit" button element
+        var submitButton = document.createElement("button");
+        submitButton.textContent = "Submit";
+        submitButton.classList = "button";
+        submitButton.type = "submit";
+        submitButton.id = "submitButton";
+        submitButton.style.display = "none";
+
+        document.getElementById("sections").appendChild(nextButton);
+        document.getElementById("sections").appendChild(prevButton);
+        document.getElementById("sections").appendChild(submitButton);
+
+        document.getElementById("nextButton").addEventListener("click", function (event) {
+            // Remove "unanswered" class from all radio inputs
+            var radioInputs = document.querySelectorAll('input[type="radio"]');
+            radioInputs.forEach(input => {
+                input.classList.remove("unanswered");
+            });
+
+            // Add "unanswered" class to the first radio in each question group where none are checked
+            var optionsGroups = document.querySelectorAll('.options');
+            optionsGroups.forEach(group => {
+                var radioInputs = group.querySelectorAll('input[type="radio"]');
+                if (!Array.from(radioInputs).some(input => input.checked)) {
+                    radioInputs[0].classList.add("unanswered");
+                }
+            });
+
+            // Find the first unanswered question using querySelector
+            var firstUnansweredQuestion = document.querySelector('input[type="radio"].unanswered');
+
+            if (firstUnansweredQuestion) {
+                var container = firstUnansweredQuestion.closest(".container");
+                container.scrollIntoView({ behavior: "smooth" });
+            } else {
+                nextButton.style.display = "none";
+                prevButton.style.display = "block";
+                submitButton.style.display = "block";
+
+                // Loop through sections 1 to 6 and set their display to 'none'
+                for (var i = 1; i <= 6; i++) {
+                    var section = document.getElementById('section' + i);
+                    section.style.display = 'none';
+                }
+                // Display section7
+                var section7 = document.getElementById('section7');
+                section7.style.display = 'flex';
+                scrollToTop();
+            }
+
+        });
+
+        document.getElementById("prevButton").addEventListener("click", function (event) {
+            // Loop through sections 1 to 6 and toggle their display
+            for (var i = 1; i <= 6; i++) {
+                var section = document.getElementById('section' + i);
+                section.style.display = 'flex'; // You can adjust the display property as needed
+            }
+
+            // Hide section 7
+            var section7 = document.getElementById('section7');
+            section7.style.display = 'none';
+
+            // Show the "Next" button and hide the "Prev" button
+            nextButton.style.display = "block";
+            prevButton.style.display = "none";
+            submitButton.style.display = "none";
+        });
+
+        // document.getElementById("submitButton").addEventListener("click", function (event) {
+        //     var dropdowns = document.querySelectorAll("#section7 select");
+        //     var scrollToElement = null;
+
+        //     for (var i = 0; i < dropdowns.length; i++) {
+        //         if (dropdowns[i].value === "") {
+        //             scrollToElement = dropdowns[i];
+        //             break;
+        //         }
+        //     }
+
+        //     if (scrollToElement) {
+        //         console.log("Scrolling to:", scrollToElement);
+
+        //         // Scroll to the specific unanswered question
+        //         scrollToElement.scrollIntoView({ behavior: "smooth" });
+        //         scrollToTop();
+        //         event.preventDefault(); // Prevent form submission
+        //         alert("Please answer all questions in Section 7.");
+        //     }
+        // });
+
+        document.getElementById("submitButton").addEventListener("click", function (event) {
+            var dropdowns = document.querySelectorAll("#section7 select");
+            var allAnswered = true;
+
+            for (var i = 0; i < dropdowns.length; i++) {
+                if (dropdowns[i].value === "") {
+                    allAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allAnswered) {
+                // Scroll to the top if not all questions are answered
+                scrollToTop();
+                event.preventDefault(); // Prevent form submission
+                alert("Please answer all questions in Section 7.");
+            }
+        });
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

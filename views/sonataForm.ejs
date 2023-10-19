@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <style>
+        body,html{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100vw;
+            height: auto;
+            overflow-x: hidden;
+        }
+        .wrap{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin-bottom: 100px;
+        }
+        .center-container {
+            min-width: 20%;
+            max-width: 80%;
+            margin: 0 auto;
+            margin-top: 100px;
+            text-align: left;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .center-container h1 {
+            font-size: 26px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .center-container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .next {
+            padding: 20px;
+            border-radius: 20px;
+            background-color: lightgray;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .next a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            
+            .center-container h1 {
+                font-size: 20px;
+                margin-top: 15px;
+                margin-bottom: 8px;
+            }
+
+            .center-container p {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .next{
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            .next a{
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="center-container">
+            <h1 style="font-size: 32px;text-align: center;">Employee Inclusion Survey Consent Form 2023</h1>
+            <p>Thank you for considering participating in the Sonata Employee Inclusion Survey <span style="font-weight: bold;">(hereafter the 'survey').</span>  
+            </p> 
+            <p>Sonata Software Limited and its subsidiaries (hereafter <span style="font-weight: bold;">'Sonata'</span>) aspire to identify areas of improvement in diversity and inclusion, create a more inclusive environment, and ensure equal opportunities for all of Sonata’s employees. Sonata has engaged Parity Consulting and Training (hereafter <span style="font-weight: bold;">'Parity'</span>), which is based in India, for generating aggregated statistics, drafting a diversity and inclusion roadmap for Sonata and creating workshops and trainings for Sonata. Parity has decided to use an inclusion survey to be able to provide its services to Sonata. The survey answers will not be shared with Sonata. Sonata will only receive anonymous and aggregated statistics and advice. Sonata will not be able to attribute responses to an employee. 
+            </p>
+            <h1>Collection and processing of personal data by Parity</h1>
+            <p>Sonata has given consent to Parity Consulting and Training Pvt Limited. (mentioned as Parity, hereafter), based out of India, for the processing of personal data for the purposes of generating statistics, drafting a D&I roadmap for Sonata and its subsidiaries and creating workshops and trainings for Sonata and its subsidiaries. Further, the collected personal data will not be shared with Sonata or any of its entities.
+            </p>
+            <h1>Purpose of the Survey</h1>
+            <p>If you're going to participate in the survey, you will be sharing your survey answers, which include personal data, with Parity. Due to the nature of the survey, you may be sharing special categories of personal data with Parity (such as information about your gender and age group ) Parity will process your personal data as a separate data controller. However, Sonata has agreed with Parity that Parity shall only use your personal data for the purposes described above. For more information, please consult <a href="/Parity Privacy Data Protection Document.pdf" target="_blank" style="color: rgb(0, 0, 0);text-decoration: underline;font-weight: bold;">Parity Consulting's Data Privacy and Protection Agreement.</a>
+            </p>
+            <h1>Confidentiality of Your Responses </h1>
+            <p>We assure you that your participation in this survey is entirely voluntary, and your responses will be treated with the utmost confidentiality. Your identity will be kept strictly confidential, and your individual responses will not be attributed to you personally in any published reports or analyses. All data collected will be aggregated and anonymized to protect your privacy. 
+            </p>
+            <p>For processing your personal data, Parity needs your consent. Your consent is asked via this consent form. 
+            </p>
+            <p>Participating in the survey is entirely voluntary. You're free to refuse your consent to Parity or withdraw your consent by contacting the mail address included below. If you refuse your consent, you cannot participate in the survey. Refusing or withdrawing your consent will not have any negative impact on your position at Sonata and giving your consent to Parity will not provide any benefits or opportunities. Withdrawing your consent will not affect the lawfulness of the processing that took place prior to your withdrawal.
+            </p>
+            <p>Parity takes data protection and security seriously. All survey responses will be stored on secure servers and accessible only to authorized personnel involved in the analysis process. Parity has implemented appropriate technical and organizational measures to prevent unauthorized access, disclosure, or misuse of personal data.
+            </p>
+            <h1>Contact Information </h1>
+            <p>If you have any questions or concerns regarding this survey or the processing of your personal data, please feel free to reach out to Jyothsna Hirode at jyothsna@parityconsulting.in  
+            </p>
+            <p>By participating in this survey, you acknowledge that you have read and understood the information provided in this consent form and voluntarily consent to the use of your (special categories of) personal data for the stated purposes by Parity. 
+            </p>
+            <p>Please indicate your consent or refusal thereof by checking the applicable box on the webpage.
+            </p>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button class="next"><a href=<%= backToSurvey %> style="text-decoration: none; color: black;">Back to survey</a></button>
+            </div>
+        </div>    
+    </div>
+    
+    <script>
+        const contElement = document.querySelectorAll(".container");
+        const container1 = document.querySelectorAll(".center-container");
+        const userAgent = navigator.userAgent;
+        
+        // Check if the browser is Safari
+        const isSafari = userAgent.includes("Safari") && !userAgent.includes("Chrome");
+    
+        contElement.forEach(element => {
+          if (isSafari) {
+            element.style.top = "7%";
+            element.style.width = "1000px"; 
+          } else {
+            element.style.top = "50%";
+            element.style.width = "1500px";
+          }
+        });
+
+         container1.forEach(element => {
+          if (isSafari) {
+            element.style.top = "60%";
+             
+          } else {
+           
+          }
+        });
+
+        
+</script>
+</body>
+</html>

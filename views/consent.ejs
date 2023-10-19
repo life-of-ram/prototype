@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sonata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url("consent_bg.png");
+            background-size: cover;
+            font-family: "Poppins";
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .sonata-logo {
+            width: 35%;
+            height: auto;
+            margin: 5% auto;
+        }
+
+        .parity-logo {
+            width: 50%;
+            height: auto;
+            margin: 5% auto;
+        }
+
+        .center-text {
+            flex: 2;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .container {
+            background: #e6e6e6;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding: 5%;
+            border-radius: 20px;
+            gap: 20px;
+            font-size: 20px;
+            margin: 4% auto;
+            margin-bottom: none;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            border: 2px solid orange;
+        }
+
+        input[type="radio"] {
+            width: 20px;
+            height: 15px;
+            accent-color: black;
+            border: none;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btnContainer {
+            color: black;
+        }
+
+        button {
+            color: #000000;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 30px;
+            font-weight: 600;
+            border-radius: 20px;
+            width: 200px;
+            height: 60px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        button:hover {
+            color: #FFFFFF;
+            background-color: orange;
+        }
+
+        @media screen and (max-width: 1020px) {
+
+            .container {
+                font-size: 18px;
+            }
+
+            .logo {
+                flex: 0.5;
+            }
+
+            .center-text {
+                flex: 1;
+                font-size: 20px;
+            }
+
+            .sonata-logo {
+                width: 60%;
+                height: auto;
+                margin: 5% auto;
+            }
+
+            .parity-logo {
+                width: 80%;
+                height: auto;
+                margin: 5% auto;
+            }
+
+            .btnContainer {
+                justify-content: center;
+                padding: 20px;
+            }
+
+            button {
+                font-size: 20px;
+                width: 120px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="sonata-logo" src="sonata-logo.png" alt="Left Logo">
+        </div>
+        <div class="center-text">
+            INCLUSION SURVEY CONSENT
+        </div>
+        <div class="logo">
+            <img class="parity-logo" src="parity-logo.png" alt="Right Logo">
+        </div>
+    </header>
+    <div class="container">
+        <div>
+            <input type="radio" name="consent" value="yes">
+            <label> I have read and understood the information provided in this consent form and willingly
+                agree to participate in the employee inclusion survey</label>
+        </div>
+        <div>
+            <input type="radio" name="consent" value="no">
+            <label>I have read and understood the information provided in this consent form but choose not to
+                participate in the employee inclusion survey</label>
+        </div>
+        <a href=<%= sonataForm %>>Consent Form</a>
+        <a href=<%= parityForm %>>Parity Consulting's Data Privacy and Protection Agreement</a>
+        <div class="btnContainer">
+            <button onclick="redirect()">Next</button>
+        </div>
+    </div>
+    <script>//For check if checkboxes checked or not
+        function redirect() {
+            var selected = document.querySelector('input[name="consent"]:checked').value;
+            console.log(selected)
+            if (selected == "yes") {
+                window.location.href = "<%= accept %>"
+            }
+            else {
+                window.location.href = "<%= decline %>"
+            }
+        }</script>
+</body>
+
+</html>
