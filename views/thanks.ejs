@@ -131,9 +131,7 @@
       }
     }
 
-    @media screen and (max-width: 1400px) {
-
-    }
+    @media screen and (max-width: 1400px) {}
 
     @media screen and (max-width: 1020px) {
       body {
@@ -150,9 +148,10 @@
       }
 
       .logo {
-        flex: 0.5;
+        flex: 1;
         align-items: center;
         justify-content: center;
+        margin: 5%;
       }
 
       .center-text {
@@ -160,17 +159,15 @@
       }
 
       .sonata-logo {
-        width: 100px;
+        width: 60%;
         height: auto;
-        margin: 5% 80px;
-        margin-left: 0px;
+        margin: 5% auto;
       }
 
       .parity-logo {
-        width: 150px;
+        width: 80%;
         height: auto;
-        margin: 5% 50px;
-        margin-left: 0px;
+        margin: 5% auto;
       }
 
       #centered-div {
@@ -224,7 +221,7 @@
       }, 2000); // Stop after 2 seconds
     });
 
-    function sw(){
+    function sw() {
       var s = window.screen.width;
       alert(s);
     }
